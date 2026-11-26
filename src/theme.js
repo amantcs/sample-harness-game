@@ -1,4 +1,4 @@
-const activeTheme = 'green-screen';
+const activeTheme = 'desert-run';
 
 const themeColors = {
   original: '#151b17',
