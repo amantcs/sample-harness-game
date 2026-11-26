@@ -1,4 +1,4 @@
-const activeTheme = 'deep-sea';
+const activeTheme = 'desert-run';
 
 const themeColors = {
   original: '#151b17',
