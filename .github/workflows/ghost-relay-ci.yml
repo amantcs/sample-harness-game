@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      IMAGE: atltvri/sample-app:gha-sha-${{ github.sha }}
+      IMAGE: amanasr/sample-app:gha-sha-${{ github.sha }}
 
     steps:
       - name: Check out code
@@ -67,7 +67,7 @@ jobs:
           platform=$(docker image inspect --format '{{.Os}}/{{.Architecture}}' "$IMAGE")
           echo "Built platform: $platform"
           test "$platform" = linux/arm64
-          ./scripts/smoke-image.sh "$IMAGE"
+          bash ./scripts/smoke-image.sh "$IMAGE"
 
       - name: Export tested image
         run: docker save "$IMAGE" | gzip -n > ghost-relay-linux-arm64.tar.gz
@@ -88,7 +88,7 @@ jobs:
         env:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         with:
-          username: atltvri
+          username: amanasr
           password: ${{ env.DOCKERHUB_TOKEN }}
 
       - name: Publish tested image to Docker Hub
