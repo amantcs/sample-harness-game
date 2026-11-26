@@ -1,7 +1,7 @@
 pipeline:
   name: Ghost Relay CI
   identifier: Ghost_Relay_CI
-  projectIdentifier: ATTest
+  projectIdentifier: amandeepsandbox
   orgIdentifier: sandboxtraining
   description: Test, package, and publish the Ghost Relay frontend image.
   tags:
