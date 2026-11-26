@@ -67,7 +67,7 @@ jobs:
           platform=$(docker image inspect --format '{{.Os}}/{{.Architecture}}' "$IMAGE")
           echo "Built platform: $platform"
           test "$platform" = linux/arm64
-          ./scripts/smoke-image.sh "$IMAGE"
+          bash ./scripts/smoke-image.sh "$IMAGE"
 
       - name: Export tested image
         run: docker save "$IMAGE" | gzip -n > ghost-relay-linux-arm64.tar.gz
